@@ -35,7 +35,7 @@ export default function Landing() {
   };
 
   return (
-    <div className="min-h-screen" style={{ background: "var(--bg-primary)" }}>
+    <div className="min-h-screen grid-bg" style={{ position: "relative" }}>
       {/* Nav */}
       <nav
         className="sticky top-0 z-50"
@@ -75,11 +75,11 @@ export default function Landing() {
       </nav>
 
       {/* Hero */}
-      <section className="max-w-6xl mx-auto px-6 pt-24 pb-20">
-        <div className="max-w-3xl">
-          <div className="badge badge-purple mb-6">{t.heroTag}</div>
+      <section className="max-w-6xl mx-auto px-6 flex items-center justify-center" style={{ minHeight: "100vh" }}>
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="badge badge-purple mb-8 text-sm px-4 py-1.5">{t.heroTag}</div>
           <h1
-            className="text-5xl md:text-6xl font-semibold leading-tight tracking-tight"
+            className="text-6xl md:text-8xl font-bold leading-tight tracking-tight"
             style={{ color: "var(--text-primary)" }}
           >
             {t.heroTitle1}
@@ -87,76 +87,23 @@ export default function Landing() {
             <span className="text-gradient">{t.heroTitle2}</span>
           </h1>
           <p
-            className="text-lg mt-6 leading-relaxed max-w-xl"
+            className="text-xl md:text-2xl mt-8 leading-relaxed max-w-2xl mx-auto"
             style={{ color: "var(--text-secondary)" }}
           >
             {t.heroDesc}
           </p>
-          <div className="flex items-center gap-3 mt-8">
-            <Link to="/app" className="btn btn-primary btn-lg">
+          <div className="flex items-center justify-center gap-4 mt-10">
+            <Link to="/app" className="btn btn-primary" style={{ padding: "14px 36px", fontSize: "16px" }}>
               {t.connectWorkspace}
             </Link>
-            <a href="#demo" className="btn btn-secondary btn-lg">
+            <a href="#demo" className="btn btn-secondary" style={{ padding: "14px 36px", fontSize: "16px" }}>
               {t.viewDemo}
             </a>
           </div>
         </div>
-
-        {/* Flow Diagram - Clean, no arrows */}
-        <div className="mt-16 space-y-4">
-          {/* Sources */}
-          <div className="grid grid-cols-3 gap-3 max-w-lg">
-            {["GitHub", "Discord", "Wallet"].map((name) => (
-              <div
-                key={name}
-                className="card-compact text-center text-sm"
-                style={{ color: "var(--text-secondary)" }}
-              >
-                {name}
-              </div>
-            ))}
-          </div>
-
-          {/* Connector */}
-          <div className="flex items-center gap-2 max-w-lg">
-            <div className="flex-1 h-px" style={{ background: "var(--border-primary)" }} />
-            <span className="text-xs" style={{ color: "var(--text-muted)" }}>↓</span>
-            <div className="flex-1 h-px" style={{ background: "var(--border-primary)" }} />
-          </div>
-
-          {/* AI Engine */}
-          <div
-            className="card-compact text-center max-w-xs"
-            style={{ borderColor: "var(--color-primary-muted)" }}
-          >
-            <span className="text-sm font-medium" style={{ color: "var(--color-primary)" }}>
-              AI Engine
-            </span>
-          </div>
-
-          {/* Connector */}
-          <div className="flex items-center gap-2 max-w-xs">
-            <div className="flex-1 h-px" style={{ background: "var(--border-primary)" }} />
-            <span className="text-xs" style={{ color: "var(--text-muted)" }}>↓</span>
-            <div className="flex-1 h-px" style={{ background: "var(--border-primary)" }} />
-          </div>
-
-          {/* Output */}
-          <div className="grid grid-cols-2 gap-3 max-w-sm">
-            <div className="card-compact text-center text-sm" style={{ color: "var(--text-secondary)" }}>
-              {t.leaderboard}
-            </div>
-            <div
-              className="card-compact text-center text-sm"
-              style={{ borderColor: "var(--color-success-muted)", color: "var(--color-success)" }}
-            >
-              USDC
-            </div>
-          </div>
-        </div>
       </section>
 
-      {/* Data Collection */}
+      {/* Data Collection + Flow */}
       <section id="demo" className="border-t" style={{ borderColor: "var(--border-primary)" }}>
         <div className="max-w-6xl mx-auto px-6 py-20">
           <div className="text-center mb-12">
@@ -167,6 +114,32 @@ export default function Landing() {
               {t.dataCollectionDesc}
             </p>
           </div>
+
+          {/* Flow Diagram */}
+          <div className="flex flex-col items-center space-y-4 mb-16">
+            <div className="grid grid-cols-3 md:grid-cols-5 gap-3 w-full max-w-2xl">
+              {["GitHub", "Discord", "Telegram", "X", "Wallet"].map((name) => (
+                <div key={name} className="card-compact text-center text-sm" style={{ color: "var(--text-secondary)" }}>
+                  {name}
+                </div>
+              ))}
+            </div>
+            <span className="text-2xl font-bold" style={{ color: "var(--color-primary)" }}>↓</span>
+            <div className="card-compact text-center w-full max-w-xs" style={{ borderColor: "var(--color-primary-muted)" }}>
+              <span className="text-sm font-semibold" style={{ color: "var(--color-primary)" }}>AI Engine</span>
+            </div>
+            <span className="text-2xl font-bold" style={{ color: "var(--color-primary)" }}>↓</span>
+            <div className="grid grid-cols-2 gap-3 w-full max-w-sm">
+              <div className="card-compact text-center text-sm" style={{ color: "var(--text-secondary)" }}>
+                {t.leaderboard}
+              </div>
+              <div className="card-compact text-center text-sm" style={{ borderColor: "var(--color-success-muted)", color: "var(--color-success)" }}>
+                USDC
+              </div>
+            </div>
+          </div>
+
+          {/* Platform Cards */}
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
             {platforms.map((p) => (
               <div key={p.name} className="card text-center">
