@@ -2,11 +2,11 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1920">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DAO Contrib Agent - Pitch Deck</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;background:#000}
 .viewport{width:100vw;height:100vh;overflow:hidden;background:#000}
 .stage{width:1920px;height:1080px;position:relative;transform-origin:center center}
 .slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .8s,transform .8s;transform:translateY(40px)}
@@ -14,11 +14,11 @@
 .slide-content{position:relative;z-index:10;width:100%;height:100%;padding:60px 100px;display:flex;flex-direction:column;color:#fff}
 :root{--dark:#0A0A0F;--card:#141419;--blue:#007AFF;--green:#34C759;--red:#FF3B30;--purple:#AF52DE;--cyan:#5EDCF4;--pink:#F0A6CA;--white:#FFF;--gray:#8E8E93}
 .grid-bg{background-color:#0A0A0F;background-image:linear-gradient(rgba(0,122,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,122,255,.05) 1px,transparent 1px);background-size:40px 40px}
-.title{font-family:'Noto Sans SC',sans-serif;font-size:56px;font-weight:900;line-height:1.2;color:var(--white)}
+.title{font-family:'PingFang SC','Microsoft YaHei','Noto Sans SC','Hiragino Sans GB','WenQuanYi Micro Hei',sans-serif;font-size:56px;font-weight:900;line-height:1.2;color:var(--white)}
 .tc{color:var(--cyan)}.tp{color:var(--pink)}.tg{color:var(--green)}.tb{color:var(--blue)}.tpu{color:var(--purple)}
-.sub{font-family:'Noto Sans SC',sans-serif;font-size:24px;color:rgba(255,255,255,.8);line-height:1.5}
-.body{font-family:'Noto Sans SC',sans-serif;font-size:18px;color:rgba(255,255,255,.85);line-height:1.7}
-.label{font-family:'Noto Sans SC',sans-serif;font-size:14px;font-weight:700;color:var(--blue);letter-spacing:.1em}
+.sub{font-family:'PingFang SC','Microsoft YaHei','Noto Sans SC','Hiragino Sans GB','WenQuanYi Micro Hei',sans-serif;font-size:24px;color:rgba(255,255,255,.8);line-height:1.5}
+.body{font-family:'PingFang SC','Microsoft YaHei','Noto Sans SC','Hiragino Sans GB','WenQuanYi Micro Hei',sans-serif;font-size:18px;color:rgba(255,255,255,.85);line-height:1.7}
+.label{font-family:'PingFang SC','Microsoft YaHei','Noto Sans SC','Hiragino Sans GB','WenQuanYi Micro Hei',sans-serif;font-size:14px;font-weight:700;color:var(--blue);letter-spacing:.1em}
 .card{background:rgba(20,20,25,.9);border-radius:16px;padding:32px;border:1px solid rgba(255,255,255,.15);color:#fff}
 .cp{background:rgba(255,59,48,.15);border:2px solid rgba(255,59,48,.4);border-radius:16px;padding:32px;color:#fff}
 .cs{background:rgba(52,199,89,.15);border:2px solid rgba(52,199,89,.4);border-radius:16px;padding:32px;color:#fff}
@@ -28,12 +28,12 @@
 .pt{font-size:24px;font-weight:700;color:var(--red);margin-bottom:12px}
 .st{font-size:24px;font-weight:700;color:var(--green);margin-bottom:12px}
 .it{font-size:24px;font-weight:700;color:var(--blue);margin-bottom:12px}
-.sn{font-family:'Noto Sans SC',sans-serif;font-size:48px;font-weight:900;color:var(--cyan)}
+.sn{font-family:'PingFang SC','Microsoft YaHei','Noto Sans SC','Hiragino Sans GB','WenQuanYi Micro Hei',sans-serif;font-size:48px;font-weight:900;color:var(--cyan)}
 .sl{font-size:14px;color:rgba(255,255,255,.7)}
 .nav{position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:12px}
 .nd{width:12px;height:12px;border:2px solid var(--blue);background:transparent;cursor:pointer;transition:.2s}
 .nd.a{background:var(--blue)}
-.sc{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:100;font-size:14px;color:var(--blue);background:rgba(10,10,15,.8);padding:4px 16px}
+.sc{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:100;font-size:14px;color:var(--blue);background:rgba(10,10,15,.8);padding:4px 16px;border-radius:4px}
 @keyframes fi{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .ai{animation:fi .6s ease-out both}
 .d1{animation-delay:.2s}.d2{animation-delay:.4s}.d3{animation-delay:.6s}.d4{animation-delay:.8s}.d5{animation-delay:1s}
@@ -114,7 +114,7 @@
     <div class="label ai" style="margin-bottom:16px">05 . ARCHITECTURE</div>
     <div class="title ai d1" style="margin-bottom:48px">三层架构设计</div>
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;margin-bottom:48px">
-      <div class="card ai d2" style="border-top:4px solid var(--blue)"><div style="font-size:18px;font-weight:700;color:var(--blue);margin-bottom:20px">前端层</div><div class="body">• React Native + TypeScript<br>• 跨平台移动端<br>• Tailwind CSS<br>• Ethers.js 6</div></div>
+      <div class="card ai d2" style="border-top:4px solid var(--blue)"><div style="font-size:18px;font-weight:700;color:var(--blue);margin-bottom:20px">前端层</div><div class="body">• React 18 + TypeScript<br>• Tailwind CSS<br>• Ethers.js 6<br>• Vite 构建</div></div>
       <div class="card ai d3" style="border-top:4px solid var(--purple)"><div style="font-size:18px;font-weight:700;color:var(--purple);margin-bottom:20px">AI 层</div><div class="body">• Mimo v2.5 Pro<br>• GPT-5.5<br>• 贡献分析引擎<br>• 智能降级机制</div></div>
       <div class="card ai d4" style="border-top:4px solid var(--cyan)"><div style="font-size:18px;font-weight:700;color:var(--cyan);margin-bottom:20px">链上层</div><div class="body">• Cobo Agentic Wallet<br>• Solidity 智能合约<br>• Sepolia 测试网<br>• Hardhat 框架</div></div>
     </div>
@@ -179,14 +179,14 @@
 <div class="sc" id="sc">01 / 09</div>
 </div></div>
 <script>
-function S(){const s=document.getElementById('stage');s.style.transform=`scale(${Math.min(innerWidth/1920,innerHeight/1080)})`}addEventListener('resize',S);S();
-let c=0;const sl=document.querySelectorAll('.slide'),n=sl.length,r=document.getElementById('nav');
-for(let i=0;i<n;i++){const d=document.createElement('div');d.className='nd'+(i?'':' a');d.onclick=()=>g(i);r.appendChild(d)}
-function u(){r.querySelectorAll('.nd').forEach((d,i)=>d.classList.toggle('a',i===c));document.getElementById('sc').textContent=`${String(c+1).padStart(2,'0')} / ${String(n).padStart(2,'0')}`}
+function S(){var s=document.getElementById('stage');s.style.transform='scale('+Math.min(innerWidth/1920,innerHeight/1080)+')'}addEventListener('resize',S);S();
+var c=0;var sl=document.querySelectorAll('.slide');var n=sl.length;var r=document.getElementById('nav');
+for(var i=0;i<n;i++){var d=document.createElement('div');d.className='nd'+(i?'':' a');d.onclick=function(j){return function(){g(j)}}(i);r.appendChild(d)}
+function u(){var nds=r.querySelectorAll('.nd');for(var i=0;i<nds.length;i++){nds[i].classList.toggle('a',i===c)}document.getElementById('sc').textContent=(c<9?'0':'')+(c+1)+' / '+(n<10?'0':'')+n}
 function g(i){if(i<0||i>=n)return;sl[c].classList.remove('active');c=i;sl[c].classList.add('active');u()}
-addEventListener('keydown',e=>{if('ArrowDown ArrowRight '.includes(e.key)){e.preventDefault();g(c+1)}if('ArrowUp ArrowLeft'.includes(e.key)){e.preventDefault();g(c-1)}});
-let ty=0;addEventListener('touchstart',e=>{ty=e.touches[0].clientY});addEventListener('touchend',e=>{const d=ty-e.changedTouches[0].clientY;if(Math.abs(d)>50){d>0?g(c+1):g(c-1)}});
-let w=0;addEventListener('wheel',e=>{if(w)return;w=1;setTimeout(()=>w=0,800);e.deltaY>0?g(c+1):g(c-1)});
+addEventListener('keydown',function(e){if(e.key==='ArrowDown'||e.key==='ArrowRight'){e.preventDefault();g(c+1)}if(e.key==='ArrowUp'||e.key==='ArrowLeft'){e.preventDefault();g(c-1)}});
+var ty=0;addEventListener('touchstart',function(e){ty=e.touches[0].clientY});addEventListener('touchend',function(e){var d=ty-e.changedTouches[0].clientY;if(Math.abs(d)>50){d>0?g(c+1):g(c-1)}});
+var w=0;addEventListener('wheel',function(e){if(w)return;w=1;setTimeout(function(){w=0},800);e.deltaY>0?g(c+1):g(c-1)});
 </script>
 </body>
 </html>
