@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>DAO Contrib Agent - Pitch Deck</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.viewport{width:100vw;height:100vh;overflow:hidden;background:#000}
+.stage{width:1920px;height:1080px;position:relative;transform-origin:center center}
+.slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .8s,transform .8s;transform:translateY(40px)}
+.slide.active{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+.slide-content{position:relative;z-index:10;width:100%;height:100%;padding:60px 100px;display:flex;flex-direction:column;color:#fff}
+:root{--dark:#0A0A0F;--card:#141419;--blue:#007AFF;--green:#34C759;--red:#FF3B30;--purple:#AF52DE;--cyan:#5EDCF4;--pink:#F0A6CA;--white:#FFF;--gray:#8E8E93}
+.grid-bg{background-color:#0A0A0F;background-image:linear-gradient(rgba(0,122,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,122,255,.05) 1px,transparent 1px);background-size:40px 40px}
+.title{font-family:'Noto Sans SC',sans-serif;font-size:56px;font-weight:900;line-height:1.2;color:var(--white)}
+.tc{color:var(--cyan)}.tp{color:var(--pink)}.tg{color:var(--green)}.tb{color:var(--blue)}.tpu{color:var(--purple)}
+.sub{font-family:'Noto Sans SC',sans-serif;font-size:24px;color:rgba(255,255,255,.8);line-height:1.5}
+.body{font-family:'Noto Sans SC',sans-serif;font-size:18px;color:rgba(255,255,255,.85);line-height:1.7}
+.label{font-family:'Noto Sans SC',sans-serif;font-size:14px;font-weight:700;color:var(--blue);letter-spacing:.1em}
+.card{background:rgba(20,20,25,.9);border-radius:16px;padding:32px;border:1px solid rgba(255,255,255,.15);color:#fff}
+.cp{background:rgba(255,59,48,.15);border:2px solid rgba(255,59,48,.4);border-radius:16px;padding:32px;color:#fff}
+.cs{background:rgba(52,199,89,.15);border:2px solid rgba(52,199,89,.4);border-radius:16px;padding:32px;color:#fff}
+.ci{background:rgba(0,122,255,.15);border:2px solid rgba(0,122,255,.4);border-radius:16px;padding:32px;color:#fff}
+.cc{background:rgba(175,82,222,.15);border:2px solid rgba(175,82,222,.4);border-radius:16px;padding:32px;color:#fff}
+.icon{font-size:48px;margin-bottom:16px}
+.pt{font-size:24px;font-weight:700;color:var(--red);margin-bottom:12px}
+.st{font-size:24px;font-weight:700;color:var(--green);margin-bottom:12px}
+.it{font-size:24px;font-weight:700;color:var(--blue);margin-bottom:12px}
+.sn{font-family:'Noto Sans SC',sans-serif;font-size:48px;font-weight:900;color:var(--cyan)}
+.sl{font-size:14px;color:rgba(255,255,255,.7)}
+.nav{position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:12px}
+.nd{width:12px;height:12px;border:2px solid var(--blue);background:transparent;cursor:pointer;transition:.2s}
+.nd.a{background:var(--blue)}
+.sc{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:100;font-size:14px;color:var(--blue);background:rgba(10,10,15,.8);padding:4px 16px}
+@keyframes fi{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.ai{animation:fi .6s ease-out both}
+.d1{animation-delay:.2s}.d2{animation-delay:.4s}.d3{animation-delay:.6s}.d4{animation-delay:.8s}.d5{animation-delay:1s}
+</style>
+</head>
+<body>
+<div class="viewport">
+<div class="stage" id="stage">
+<div class="slides-container">
+
+<div class="slide grid-bg active" data-slide="0">
+  <div class="slide-content" style="align-items:center;justify-content:center;text-align:center">
+    <div class="label ai" style="margin-bottom:24px">AI x WEB3 HACKATHON . COBO TRACK</div>
+    <div class="title ai d1" style="font-size:80px;margin-bottom:24px"><span class="tc">DAO Contrib</span><br><span class="tp">Agent</span></div>
+    <div class="sub ai d2" style="max-width:800px;margin-bottom:48px">AI 椹卞姩鐨?DAO 璐＄尞鑷姩杩借釜 . 鏅鸿兘璇勪及 . 閾句笂缁撶畻</div>
+    <div style="display:flex;gap:16px" class="ai d3">
+      <div style="border:2px solid var(--blue);color:var(--blue);padding:12px 24px;border-radius:8px;font-size:14px">Cobo Agentic Wallet</div>
+      <div style="border:2px solid var(--cyan);color:var(--cyan);padding:12px 24px;border-radius:8px;font-size:14px">Sepolia Testnet</div>
+      <div style="border:2px solid var(--pink);color:var(--pink);padding:12px 24px;border-radius:8px;font-size:14px">Mimo AI</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide grid-bg" data-slide="1">
+  <div class="slide-content">
+    <div class="label ai" style="margin-bottom:16px">01 . PAIN POINTS</div>
+    <div class="title ai d1" style="margin-bottom:48px">DAO 璐＄尞绠＄悊鐨?span class="tp">鍥涘ぇ鐥涚偣</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+      <div class="cp ai d2"><div class="icon">馃搳</div><div class="pt">璐＄尞鍒嗘暎锛岀粺璁″洶闅?/div><div class="body">璐＄尞鍒嗘暎鍦?GitHub銆丏iscord 绛夊骞冲彴锛屼汉宸ョ粺璁℃晥鐜囦綆</div><div style="margin-top:16px;color:var(--red);font-size:14px">鈿狅笍 骞冲潎姣忔湀 40+ 灏忔椂浜哄伐缁熻</div></div>
+      <div class="cp ai d3"><div class="icon">馃挵</div><div class="pt">缁撶畻涓嶉€忔槑锛屼俊浠荤己澶?/div><div class="body">濂栧姳鍒嗛厤缂轰箯鏍囧噯锛屾垚鍛樺瓨鐤戯紝寮曞彂绀惧尯鐭涚浘</div><div style="margin-top:16px;color:var(--red);font-size:14px">鈿狅笍 67% 鎴愬憳瀵瑰垎閰嶄笉婊?/div></div>
+      <div class="cp ai d4"><div class="icon">鉀?/div><div class="pt">鎵ц鎴愭湰楂橈紝鏁堢巼浣庝笅</div><div class="body">姣忔缁撶畻闇€浜哄伐鍙戣捣澶氱瑪浜ゆ槗锛実as 璐圭敤楂?/div><div style="margin-top:16px;color:var(--red);font-size:14px">鈿狅笍 鍗曟缁撶畻 $50+ gas</div></div>
+      <div class="cp ai d5"><div class="icon">鈿欙笍</div><div class="pt">瑙勫垯鍍靛寲锛岄毦浠ヨ皟鏁?/div><div class="body">浼犵粺绯荤粺闅句互閫傚簲 DAO 娌荤悊瑙勫垯鐨勫姩鎬佽皟鏁?/div><div style="margin-top:16px;color:var(--red);font-size:14px">鈿狅笍 璋冩暣鍛ㄦ湡 2-4 鍛?/div></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide grid-bg" data-slide="2">
+  <div class="slide-content">
+    <div class="label ai" style="margin-bottom:16px">02 . SOLUTION</div>
+    <div class="title ai d1" style="margin-bottom:48px"><span class="tg">AI Agent</span> 椹卞姩鐨勫叏鑷姩缁撶畻</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px;margin-bottom:48px">
+      <div class="cs ai d2"><div class="icon">馃摜</div><div class="st">鑷姩閲囬泦</div><div class="body">浠?GitHub銆丏iscord 鑷姩閲囬泦璐＄尞鏁版嵁</div></div>
+      <div class="cs ai d3"><div class="icon">馃</div><div class="st">AI 鍒嗘瀽</div><div class="body">Mimo AI 璇勪及璐＄尞浠峰€硷紝鐢熸垚鍒嗘瀽鎶ュ憡</div></div>
+      <div class="cs ai d4"><div class="icon">鈿欙笍</div><div class="st">鐏垫椿瑙勫垯</div><div class="body">鍙鍖栭厤缃潈閲嶏紝瀹炴椂璋冩暣鏃犻渶閲嶉儴缃?/div></div>
+      <div class="cs ai d5"><div class="icon">馃挵</div><div class="st">閾句笂缁撶畻</div><div class="body">閫氳繃 CAW 涓€閿壒閲忚浆璐︼紝閾句笂鍙煡</div></div>
+    </div>
+    <div class="card ai d5" style="text-align:center"><div class="sub" style="color:var(--green)">鉁?浠?40+ 灏忔椂浜哄伐缁熻 鈫?5 鍒嗛挓鑷姩鍖栧畬鎴?/div></div>
+  </div>
+</div>
+
+<div class="slide grid-bg" data-slide="3">
+  <div class="slide-content">
+    <div class="label ai" style="margin-bottom:16px">03 . INNOVATION</div>
+    <div class="title ai d1" style="margin-bottom:48px">涓夊ぇ<span class="tb">鏍稿績鍒涙柊</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px">
+      <div class="ci ai d2"><div class="icon">馃</div><div class="it">AI Agent 鑷富鍐崇瓥</div><div class="body"><strong>鍒涙柊锛?/strong>AI 涓嶅彧鏄緟鍔╁伐鍏凤紝鑰屾槸鑷富璇勪及璐＄尞浠峰€肩殑 Agent<br><br><strong>鎶€鏈細</strong>Mimo v2.5 Pro + GPT-5.5 + 鏅鸿兘闄嶇骇<br><br><strong>浠峰€硷細</strong>鏁堢巼鎻愬崌 100x</div></div>
+      <div class="ci ai d3"><div class="icon">馃攼</div><div class="it">Cobo Agentic Wallet</div><div class="body"><strong>鍒涙柊锛?/strong>AI Agent 閫氳繃 CAW 瀹炵幇鑷富璧勯噾绠＄悊<br><br><strong>鎶€鏈細</strong>Agent 閽卞寘銆佹潈闄愭帶鍒躲€佸畨鍏ㄩ殧绂?br><br><strong>浠峰€硷細</strong>AI 鐪熸"鎷ユ湁"鍜?绠＄悊"璧勯噾</div></div>
+      <div class="ci ai d4"><div class="icon">鉀擄笍</div><div class="it">閾句笂閫忔槑缁撶畻</div><div class="body"><strong>鍒涙柊锛?/strong>鎵€鏈夎础鐚拰缁撶畻璁板綍涓婇摼锛屾案涔呭彲鏌?br><br><strong>鎶€鏈細</strong>Solidity + Sepolia + Etherscan<br><br><strong>浠峰€硷細</strong>浠庝笉閫忔槑 鈫?瀹屽叏閫忔槑</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide grid-bg" data-slide="4">
+  <div class="slide-content">
+    <div class="label ai" style="margin-bottom:16px">04 . COBO AGENTIC WALLET</div>
+    <div class="title ai d1" style="margin-bottom:48px"><span class="tpu">CAW</span> 鏄祫閲戞祦绋嬬殑<span class="tc">鍏抽敭缁勪欢</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+      <div class="cc ai d2"><div style="font-size:20px;font-weight:700;color:var(--purple);margin-bottom:24px">Agent 閽卞寘绠＄悊</div><div class="body" style="margin-bottom:16px">鈥?姣忎釜 Agent 鐙珛閽卞寘<br>鈥?璧勯噾闅旂锛屽畨鍏ㄥ彲鎺?br>鈥?鏀寔澶氶摼閮ㄧ讲</div><div style="background:rgba(175,82,222,.2);padding:12px;border-radius:8px;font-size:14px"><strong>CAW 鍏抽敭鎬э細</strong>鎵€鏈夎祫閲戞搷浣滈€氳繃 CAW锛屼笉鍙浛鎹?/div></div>
+      <div class="cc ai d3"><div style="font-size:20px;font-weight:700;color:var(--purple);margin-bottom:24px">鏉冮檺鎺у埗涓庡畨鍏?/div><div class="body" style="margin-bottom:16px">鈥?閲戦涓婇檺鎺у埗<br>鈥?鎿嶄綔鐧藉悕鍗曟満鍒?br>鈥?鏉冮檺鑷姩杩囨湡</div><div style="background:rgba(175,82,222,.2);padding:12px;border-radius:8px;font-size:14px"><strong>椋庨櫓杈圭晫锛?/strong>瓒呭嚭闄愬埗闇€浜哄伐纭</div></div>
+      <div class="cc ai d4"><div style="font-size:20px;font-weight:700;color:var(--purple);margin-bottom:24px">鑷富鏀粯鑳藉姏</div><div class="body" style="margin-bottom:16px">鈥?鍗曠瑪杞处<br>鈥?鎵归噺缁撶畻<br>鈥?鑷姩瑙﹀彂</div><div style="background:rgba(175,82,222,.2);padding:12px;border-radius:8px;font-size:14px"><strong>璧勯噾娴佺▼锛?/strong>浠诲姟瑙﹀彂 鈫?AI 璇勪及 鈫?CAW 缁撶畻</div></div>
+      <div class="cc ai d5"><div style="font-size:20px;font-weight:700;color:var(--purple);margin-bottom:24px">瀹屾暣璧勯噾娴佺▼</div><div class="body" style="margin-bottom:16px">鈥?璐＄尞閲囬泦 鈫?AI 鍒嗘瀽<br>鈥?鏉冮噸璁＄畻 鈫?閲戦纭畾<br>鈥?CAW 缁撶畻 鈫?閾句笂纭</div><div style="background:rgba(175,82,222,.2);padding:12px;border-radius:8px;font-size:14px"><strong>鍙紨绀烘€э細</strong>5 鍒嗛挓鍐呭畬鎴愭紨绀?/div></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide grid-bg" data-slide="5">
+  <div class="slide-content">
+    <div class="label ai" style="margin-bottom:16px">05 . ARCHITECTURE</div>
+    <div class="title ai d1" style="margin-bottom:48px">涓夊眰鏋舵瀯璁捐</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;margin-bottom:48px">
+      <div class="card ai d2" style="border-top:4px solid var(--blue)"><div style="font-size:18px;font-weight:700;color:var(--blue);margin-bottom:20px">鍓嶇灞?/div><div class="body">鈥?React Native + TypeScript<br>鈥?璺ㄥ钩鍙扮Щ鍔ㄧ<br>鈥?Tailwind CSS<br>鈥?Ethers.js 6</div></div>
+      <div class="card ai d3" style="border-top:4px solid var(--purple)"><div style="font-size:18px;font-weight:700;color:var(--purple);margin-bottom:20px">AI 灞?/div><div class="body">鈥?Mimo v2.5 Pro<br>鈥?GPT-5.5<br>鈥?璐＄尞鍒嗘瀽寮曟搸<br>鈥?鏅鸿兘闄嶇骇鏈哄埗</div></div>
+      <div class="card ai d4" style="border-top:4px solid var(--cyan)"><div style="font-size:18px;font-weight:700;color:var(--cyan);margin-bottom:20px">閾句笂灞?/div><div class="body">鈥?Cobo Agentic Wallet<br>鈥?Solidity 鏅鸿兘鍚堢害<br>鈥?Sepolia 娴嬭瘯缃?br>鈥?Hardhat 妗嗘灦</div></div>
+    </div>
+    <div class="card ai d5" style="text-align:center"><div style="display:flex;justify-content:center;gap:48px"><div><div class="sn">15+</div><div class="sl">API 鎺ュ彛</div></div><div><div class="sn">7</div><div class="sl">鍚堢害鍑芥暟</div></div><div><div class="sn">6</div><div class="sl">椤甸潰缁勪欢</div></div><div><div class="sn">100%</div><div class="sl">TypeScript</div></div></div></div>
+  </div>
+</div>
+
+<div class="slide grid-bg" data-slide="6">
+  <div class="slide-content">
+    <div class="label ai" style="margin-bottom:16px">06 . DEMO FLOW</div>
+    <div class="title ai d1" style="margin-bottom:48px">瀹屾暣<span class="tg">璧勯噾娴佺▼</span>婕旂ず</div>
+    <div style="display:flex;gap:24px;margin-bottom:48px">
+      <div class="card ai d2" style="flex:1;text-align:center"><div style="width:64px;height:64px;background:var(--blue);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:28px;font-weight:bold;color:#0A0A0F;border-radius:12px">1</div><div style="font-size:20px;font-weight:700;margin-bottom:8px">鍒涘缓 Agent 閽卞寘</div><div class="body">閫氳繃 CAW 鍒涘缓鐙珛閽卞寘</div></div>
+      <div style="color:var(--blue);font-size:32px;padding-top:40px">鈫?/div>
+      <div class="card ai d3" style="flex:1;text-align:center"><div style="width:64px;height:64px;background:var(--cyan);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:28px;font-weight:bold;color:#0A0A0F;border-radius:12px">2</div><div style="font-size:20px;font-weight:700;margin-bottom:8px">閲囬泦璐＄尞鏁版嵁</div><div class="body">浠?GitHub 鑾峰彇鏁版嵁</div></div>
+      <div style="color:var(--cyan);font-size:32px;padding-top:40px">鈫?/div>
+      <div class="card ai d4" style="flex:1;text-align:center"><div style="width:64px;height:64px;background:var(--purple);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:28px;font-weight:bold;color:#0A0A0F;border-radius:12px">3</div><div style="font-size:20px;font-weight:700;margin-bottom:8px">AI 璇勪及浠峰€?/div><div class="body">Mimo AI 鍒嗘瀽璐＄尞</div></div>
+      <div style="color:var(--purple);font-size:32px;padding-top:40px">鈫?/div>
+      <div class="card ai d5" style="flex:1;text-align:center"><div style="width:64px;height:64px;background:var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:28px;font-weight:bold;color:#0A0A0F;border-radius:12px">4</div><div style="font-size:20px;font-weight:700;margin-bottom:8px">CAW 鎵归噺缁撶畻</div><div class="body">閫氳繃 Cobo 閽卞寘杞处</div></div>
+    </div>
+    <div class="card ai d5"><div style="display:flex;justify-content:space-between;align-items:center"><div><div style="font-size:18px;font-weight:700;margin-bottom:8px">椋庨櫓杈圭晫璇存槑</div><div class="body">鈥?Agent 鏉冮檺涓ユ牸鍙楅檺锛堥噾棰濅笂闄愩€佹搷浣滅櫧鍚嶅崟锛?br>鈥?瓒呭嚭闄愬埗闇€浜哄伐纭<br>鈥?鎵€鏈変氦鏄撻摼涓婂彲鏌ワ紝鍙拷婧?/div></div><div style="text-align:center"><div class="sn">5 min</div><div class="sl">瀹屾暣婕旂ず鏃堕棿</div></div></div></div>
+  </div>
+</div>
+
+<div class="slide grid-bg" data-slide="7">
+  <div class="slide-content">
+    <div class="label ai" style="margin-bottom:16px">07 . METRICS</div>
+    <div class="title ai d1" style="margin-bottom:48px">鍙噺鍖栫殑<span class="tc">浠峰€兼寚鏍?/span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;margin-bottom:48px">
+      <div class="card ai d2" style="text-align:center"><div class="sn" style="color:var(--green)">95%</div><div class="sl" style="margin-top:8px">鏁堢巼鎻愬崌</div><div class="body" style="margin-top:8px">40+ 灏忔椂 鈫?5 鍒嗛挓</div></div>
+      <div class="card ai d3" style="text-align:center"><div class="sn" style="color:var(--blue)">80%</div><div class="sl" style="margin-top:8px">Gas 鑺傜渷</div><div class="body" style="margin-top:8px">鎵归噺缁撶畻闄嶄綆璐圭敤</div></div>
+      <div class="card ai d4" style="text-align:center"><div class="sn" style="color:var(--purple)">100%</div><div class="sl" style="margin-top:8px">閫忔槑搴?/div><div class="body" style="margin-top:8px">鎵€鏈夎褰曢摼涓婂彲鏌?/div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px">
+      <div class="card ai d3" style="text-align:center"><div style="font-size:32px;margin-bottom:8px">馃摝</div><div style="font-size:24px;font-weight:700">36+</div><div class="sl">浠ｇ爜鏂囦欢</div></div>
+      <div class="card ai d4" style="text-align:center"><div style="font-size:32px;margin-bottom:8px">馃攲</div><div style="font-size:24px;font-weight:700">15+</div><div class="sl">API 鎺ュ彛</div></div>
+      <div class="card ai d5" style="text-align:center"><div style="font-size:32px;margin-bottom:8px">馃摫</div><div style="font-size:24px;font-weight:700">6</div><div class="sl">椤甸潰缁勪欢</div></div>
+      <div class="card ai d5" style="text-align:center"><div style="font-size:32px;margin-bottom:8px">馃敆</div><div style="font-size:24px;font-weight:700">2</div><div class="sl">鍖哄潡閾鹃泦鎴?/div></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide grid-bg" data-slide="8">
+  <div class="slide-content" style="align-items:center;justify-content:center;text-align:center">
+    <div class="label ai" style="margin-bottom:24px">AI x WEB3 HACKATHON . COBO TRACK</div>
+    <div class="title ai d1" style="font-size:80px;margin-bottom:24px"><span class="tc">Thank</span> <span class="tp">You</span></div>
+    <div class="sub ai d2" style="max-width:800px;margin-bottom:48px">DAO Contrib Agent - AI 椹卞姩鐨?DAO 璐＄尞鑷姩杩借釜涓庨摼涓婄粨绠楃郴缁?/div>
+    <div style="display:flex;gap:16px" class="ai d3">
+      <div style="background:var(--blue);color:#0A0A0F;padding:16px 32px;border-radius:12px;font-size:18px;font-weight:700">GitHub</div>
+      <div style="background:var(--pink);color:#0A0A0F;padding:16px 32px;border-radius:12px;font-size:18px;font-weight:700">Demo</div>
+    </div>
+    <div style="margin-top:80px;display:flex;gap:24px" class="ai d4">
+      <div style="border:2px solid var(--blue);color:var(--blue);padding:8px 16px;border-radius:8px;font-size:12px">Cobo Agentic Wallet</div>
+      <div style="border:2px solid var(--cyan);color:var(--cyan);padding:8px 16px;border-radius:8px;font-size:12px">Sepolia Testnet</div>
+      <div style="border:2px solid var(--pink);color:var(--pink);padding:8px 16px;border-radius:8px;font-size:12px">2026</div>
+    </div>
+  </div>
+</div>
+
+</div>
+<div class="nav" id="nav"></div>
+<div class="sc" id="sc">01 / 09</div>
+</div></div>
+<script>
+function S(){const s=document.getElementById('stage');s.style.transform=`scale(${Math.min(innerWidth/1920,innerHeight/1080)})`}addEventListener('resize',S);S();
+let c=0;const sl=document.querySelectorAll('.slide'),n=sl.length,r=document.getElementById('nav');
+for(let i=0;i<n;i++){const d=document.createElement('div');d.className='nd'+(i?'':' a');d.onclick=()=>g(i);r.appendChild(d)}
+function u(){r.querySelectorAll('.nd').forEach((d,i)=>d.classList.toggle('a',i===c));document.getElementById('sc').textContent=`${String(c+1).padStart(2,'0')} / ${String(n).padStart(2,'0')}`}
+function g(i){if(i<0||i>=n)return;sl[c].classList.remove('active');c=i;sl[c].classList.add('active');u()}
+addEventListener('keydown',e=>{if('ArrowDown ArrowRight '.includes(e.key)){e.preventDefault();g(c+1)}if('ArrowUp ArrowLeft'.includes(e.key)){e.preventDefault();g(c-1)}});
+let ty=0;addEventListener('touchstart',e=>{ty=e.touches[0].clientY});addEventListener('touchend',e=>{const d=ty-e.changedTouches[0].clientY;if(Math.abs(d)>50){d>0?g(c+1):g(c-1)}});
+let w=0;addEventListener('wheel',e=>{if(w)return;w=1;setTimeout(()=>w=0,800);e.deltaY>0?g(c+1):g(c-1)});
+</script>
+</body>
+</html>
