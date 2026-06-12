@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>DAO Contrib Agent - Pitch Deck</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.viewport{width:100vw;height:100vh;overflow:hidden;background:#000}
+.stage{width:1920px;height:1080px;position:relative;transform-origin:center center}
+.slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .8s,transform .8s;transform:translateY(40px)}
+.slide.active{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+.slide-content{position:relative;z-index:10;width:100%;height:100%;padding:60px 100px;display:flex;flex-direction:column;color:#fff}
+:root{--dark:#0A0A0F;--card:#141419;--blue:#007AFF;--green:#34C759;--red:#FF3B30;--purple:#AF52DE;--cyan:#5EDCF4;--pink:#F0A6CA;--white:#FFF;--gray:#8E8E93}
+.grid-bg{background-color:#0A0A0F;background-image:linear-gradient(rgba(0,122,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,122,255,.05) 1px,transparent 1px);background-size:40px 40px}
+.title{font-family:'Noto Sans SC',sans-serif;font-size:56px;font-weight:900;line-height:1.2;color:var(--white)}
+.tc{color:var(--cyan)}.tp{color:var(--pink)}.tg{color:var(--green)}.tb{color:var(--blue)}.tpu{color:var(--purple)}
+.sub{font-family:'Noto Sans SC',sans-serif;font-size:24px;color:rgba(255,255,255,.8);line-height:1.5}
+.body{font-family:'Noto Sans SC',sans-serif;font-size:18px;color:rgba(255,255,255,.85);line-height:1.7}
+.label{font-family:'Noto Sans SC',sans-serif;font-size:14px;font-weight:700;color:var(--blue);letter-spacing:.1em}
+.card{background:rgba(20,20,25,.9);border-radius:16px;padding:32px;border:1px solid rgba(255,255,255,.15);color:#fff}
+.cp{background:rgba(255,59,48,.15);border:2px solid rgba(255,59,48,.4);border-radius:16px;padding:32px;color:#fff}
+.cs{background:rgba(52,199,89,.15);border:2px solid rgba(52,199,89,.4);border-radius:16px;padding:32px;color:#fff}
+.ci{background:rgba(0,122,255,.15);border:2px solid rgba(0,122,255,.4);border-radius:16px;padding:32px;color:#fff}
+.cc{background:rgba(175,82,222,.15);border:2px solid rgba(175,82,222,.4);border-radius:16px;padding:32px;color:#fff}
+.icon{font-size:48px;margin-bottom:16px}
+.pt{font-size:24px;font-weight:700;color:var(--red);margin-bottom:12px}
+.st{font-size:24px;font-weight:700;color:var(--green);margin-bottom:12px}
+.it{font-size:24px;font-weight:700;color:var(--blue);margin-bottom:12px}
+.sn{font-family:'Noto Sans SC',sans-serif;font-size:48px;font-weight:900;color:var(--cyan)}
+.sl{font-size:14px;color:rgba(255,255,255,.7)}
+.nav{position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:12px}
+.nd{width:12px;height:12px;border:2px solid var(--blue);background:transparent;cursor:pointer;transition:.2s}
+.nd.a{background:var(--blue)}
+.sc{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:100;font-size:14px;color:var(--blue);background:rgba(10,10,15,.8);padding:4px 16px}
+@keyframes fi{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.ai{animation:fi .6s ease-out both}
+.d1{animation-delay:.2s}.d2{animation-delay:.4s}.d3{animation-delay:.6s}.d4{animation-delay:.8s}.d5{animation-delay:1s}
+</style>
+</head>
+<body>
+<div class="viewport">
+<div class="stage" id="stage">
+<div class="slides-container">
+
+<div class="slide grid-bg active" data-slide="0">
+  <div class="slide-content" style="align-items:center;justify-content:center;text-align:center">
+    <div class="label ai" style="margin-bottom:24px">AI x WEB3 HACKATHON . COBO TRACK</div>
+    <div class="title ai d1" style="font-size:80px;margin-bottom:24px"><span class="tc">DAO Contrib</span><br><span class="tp">Agent</span></div>
+    <div class="sub ai d2" style="max-width:800px;margin-bottom:48px">AI 驱动的 DAO 贡献自动追踪 . 智能评估 . 链上结算</div>
+    <div style="display:flex;gap:16px" class="ai d3">
+      <div style="border:2px solid var(--blue);color:var(--blue);padding:12px 24px;border-radius:8px;font-size:14px">Cobo Agentic Wallet</div>
+      <div style="border:2px solid var(--cyan);color:var(--cyan);padding:12px 24px;border-radius:8px;font-size:14px">Sepolia Testnet</div>
+      <div style="border:2px solid var(--pink);color:var(--pink);padding:12px 24px;border-radius:8px;font-size:14px">Mimo AI</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide grid-bg" data-slide="1">
+  <div class="slide-content">
+    <div class="label ai" style="margin-bottom:16px">01 . PAIN POINTS</div>
+    <div class="title ai d1" style="margin-bottom:48px">DAO 贡献管理的<span class="tp">四大痛点</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+      <div class="cp ai d2"><div class="icon">📊</div><div class="pt">贡献分散，统计困难</div><div class="body">贡献分散在 GitHub、Discord 等多平台，人工统计效率低</div><div style="margin-top:16px;color:var(--red);font-size:14px">⚠️ 平均每月 40+ 小时人工统计</div></div>
+      <div class="cp ai d3"><div class="icon">💰</div><div class="pt">结算不透明，信任缺失</div><div class="body">奖励分配缺乏标准，成员存疑，引发社区矛盾</div><div style="margin-top:16px;color:var(--red);font-size:14px">⚠️ 67% 成员对分配不满</div></div>
+      <div class="cp ai d4"><div class="icon">⛽</div><div class="pt">执行成本高，效率低下</div><div class="body">每次结算需人工发起多笔交易，gas 费用高</div><div style="margin-top:16px;color:var(--red);font-size:14px">⚠️ 单次结算 $50+ gas</div></div>
+      <div class="cp ai d5"><div class="icon">⚙️</div><div class="pt">规则僵化，难以调整</div><div class="body">传统系统难以适应 DAO 治理规则的动态调整</div><div style="margin-top:16px;color:var(--red);font-size:14px">⚠️ 调整周期 2-4 周</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide grid-bg" data-slide="2">
+  <div class="slide-content">
+    <div class="label ai" style="margin-bottom:16px">02 . SOLUTION</div>
+    <div class="title ai d1" style="margin-bottom:48px"><span class="tg">AI Agent</span> 驱动的全自动结算</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px;margin-bottom:48px">
+      <div class="cs ai d2"><div class="icon">📥</div><div class="st">自动采集</div><div class="body">从 GitHub、Discord 自动采集贡献数据</div></div>
+      <div class="cs ai d3"><div class="icon">🤖</div><div class="st">AI 分析</div><div class="body">Mimo AI 评估贡献价值，生成分析报告</div></div>
+      <div class="cs ai d4"><div class="icon">⚙️</div><div class="st">灵活规则</div><div class="body">可视化配置权重，实时调整无需重部署</div></div>
+      <div class="cs ai d5"><div class="icon">💰</div><div class="st">链上结算</div><div class="body">通过 CAW 一键批量转账，链上可查</div></div>
+    </div>
+    <div class="card ai d5" style="text-align:center"><div class="sub" style="color:var(--green)">✅ 从 40+ 小时人工统计 → 5 分钟自动化完成</div></div>
+  </div>
+</div>
+
+<div class="slide grid-bg" data-slide="3">
+  <div class="slide-content">
+    <div class="label ai" style="margin-bottom:16px">03 . INNOVATION</div>
+    <div class="title ai d1" style="margin-bottom:48px">三大<span class="tb">核心创新</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px">
+      <div class="ci ai d2"><div class="icon">🧠</div><div class="it">AI Agent 自主决策</div><div class="body"><strong>创新：</strong>AI 不只是辅助工具，而是自主评估贡献价值的 Agent<br><br><strong>技术：</strong>Mimo v2.5 Pro + GPT-5.5 + 智能降级<br><br><strong>价值：</strong>效率提升 100x</div></div>
+      <div class="ci ai d3"><div class="icon">🔐</div><div class="it">Cobo Agentic Wallet</div><div class="body"><strong>创新：</strong>AI Agent 通过 CAW 实现自主资金管理<br><br><strong>技术：</strong>Agent 钱包、权限控制、安全隔离<br><br><strong>价值：</strong>AI 真正"拥有"和"管理"资金</div></div>
+      <div class="ci ai d4"><div class="icon">⛓️</div><div class="it">链上透明结算</div><div class="body"><strong>创新：</strong>所有贡献和结算记录上链，永久可查<br><br><strong>技术：</strong>Solidity + Sepolia + Etherscan<br><br><strong>价值：</strong>从不透明 → 完全透明</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide grid-bg" data-slide="4">
+  <div class="slide-content">
+    <div class="label ai" style="margin-bottom:16px">04 . COBO AGENTIC WALLET</div>
+    <div class="title ai d1" style="margin-bottom:48px"><span class="tpu">CAW</span> 是资金流程的<span class="tc">关键组件</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+      <div class="cc ai d2"><div style="font-size:20px;font-weight:700;color:var(--purple);margin-bottom:24px">Agent 钱包管理</div><div class="body" style="margin-bottom:16px">• 每个 Agent 独立钱包<br>• 资金隔离，安全可控<br>• 支持多链部署</div><div style="background:rgba(175,82,222,.2);padding:12px;border-radius:8px;font-size:14px"><strong>CAW 关键性：</strong>所有资金操作通过 CAW，不可替换</div></div>
+      <div class="cc ai d3"><div style="font-size:20px;font-weight:700;color:var(--purple);margin-bottom:24px">权限控制与安全</div><div class="body" style="margin-bottom:16px">• 金额上限控制<br>• 操作白名单机制<br>• 权限自动过期</div><div style="background:rgba(175,82,222,.2);padding:12px;border-radius:8px;font-size:14px"><strong>风险边界：</strong>超出限制需人工确认</div></div>
+      <div class="cc ai d4"><div style="font-size:20px;font-weight:700;color:var(--purple);margin-bottom:24px">自主支付能力</div><div class="body" style="margin-bottom:16px">• 单笔转账<br>• 批量结算<br>• 自动触发</div><div style="background:rgba(175,82,222,.2);padding:12px;border-radius:8px;font-size:14px"><strong>资金流程：</strong>任务触发 → AI 评估 → CAW 结算</div></div>
+      <div class="cc ai d5"><div style="font-size:20px;font-weight:700;color:var(--purple);margin-bottom:24px">完整资金流程</div><div class="body" style="margin-bottom:16px">• 贡献采集 → AI 分析<br>• 权重计算 → 金额确定<br>• CAW 结算 → 链上确认</div><div style="background:rgba(175,82,222,.2);padding:12px;border-radius:8px;font-size:14px"><strong>可演示性：</strong>5 分钟内完成演示</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide grid-bg" data-slide="5">
+  <div class="slide-content">
+    <div class="label ai" style="margin-bottom:16px">05 . ARCHITECTURE</div>
+    <div class="title ai d1" style="margin-bottom:48px">三层架构设计</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;margin-bottom:48px">
+      <div class="card ai d2" style="border-top:4px solid var(--blue)"><div style="font-size:18px;font-weight:700;color:var(--blue);margin-bottom:20px">前端层</div><div class="body">• React Native + TypeScript<br>• 跨平台移动端<br>• Tailwind CSS<br>• Ethers.js 6</div></div>
+      <div class="card ai d3" style="border-top:4px solid var(--purple)"><div style="font-size:18px;font-weight:700;color:var(--purple);margin-bottom:20px">AI 层</div><div class="body">• Mimo v2.5 Pro<br>• GPT-5.5<br>• 贡献分析引擎<br>• 智能降级机制</div></div>
+      <div class="card ai d4" style="border-top:4px solid var(--cyan)"><div style="font-size:18px;font-weight:700;color:var(--cyan);margin-bottom:20px">链上层</div><div class="body">• Cobo Agentic Wallet<br>• Solidity 智能合约<br>• Sepolia 测试网<br>• Hardhat 框架</div></div>
+    </div>
+    <div class="card ai d5" style="text-align:center"><div style="display:flex;justify-content:center;gap:48px"><div><div class="sn">15+</div><div class="sl">API 接口</div></div><div><div class="sn">7</div><div class="sl">合约函数</div></div><div><div class="sn">6</div><div class="sl">页面组件</div></div><div><div class="sn">100%</div><div class="sl">TypeScript</div></div></div></div>
+  </div>
+</div>
+
+<div class="slide grid-bg" data-slide="6">
+  <div class="slide-content">
+    <div class="label ai" style="margin-bottom:16px">06 . DEMO FLOW</div>
+    <div class="title ai d1" style="margin-bottom:48px">完整<span class="tg">资金流程</span>演示</div>
+    <div style="display:flex;gap:24px;margin-bottom:48px">
+      <div class="card ai d2" style="flex:1;text-align:center"><div style="width:64px;height:64px;background:var(--blue);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:28px;font-weight:bold;color:#0A0A0F;border-radius:12px">1</div><div style="font-size:20px;font-weight:700;margin-bottom:8px">创建 Agent 钱包</div><div class="body">通过 CAW 创建独立钱包</div></div>
+      <div style="color:var(--blue);font-size:32px;padding-top:40px">→</div>
+      <div class="card ai d3" style="flex:1;text-align:center"><div style="width:64px;height:64px;background:var(--cyan);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:28px;font-weight:bold;color:#0A0A0F;border-radius:12px">2</div><div style="font-size:20px;font-weight:700;margin-bottom:8px">采集贡献数据</div><div class="body">从 GitHub 获取数据</div></div>
+      <div style="color:var(--cyan);font-size:32px;padding-top:40px">→</div>
+      <div class="card ai d4" style="flex:1;text-align:center"><div style="width:64px;height:64px;background:var(--purple);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:28px;font-weight:bold;color:#0A0A0F;border-radius:12px">3</div><div style="font-size:20px;font-weight:700;margin-bottom:8px">AI 评估价值</div><div class="body">Mimo AI 分析贡献</div></div>
+      <div style="color:var(--purple);font-size:32px;padding-top:40px">→</div>
+      <div class="card ai d5" style="flex:1;text-align:center"><div style="width:64px;height:64px;background:var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:28px;font-weight:bold;color:#0A0A0F;border-radius:12px">4</div><div style="font-size:20px;font-weight:700;margin-bottom:8px">CAW 批量结算</div><div class="body">通过 Cobo 钱包转账</div></div>
+    </div>
+    <div class="card ai d5"><div style="display:flex;justify-content:space-between;align-items:center"><div><div style="font-size:18px;font-weight:700;margin-bottom:8px">风险边界说明</div><div class="body">• Agent 权限严格受限（金额上限、操作白名单）<br>• 超出限制需人工确认<br>• 所有交易链上可查，可追溯</div></div><div style="text-align:center"><div class="sn">5 min</div><div class="sl">完整演示时间</div></div></div></div>
+  </div>
+</div>
+
+<div class="slide grid-bg" data-slide="7">
+  <div class="slide-content">
+    <div class="label ai" style="margin-bottom:16px">07 . METRICS</div>
+    <div class="title ai d1" style="margin-bottom:48px">可量化的<span class="tc">价值指标</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;margin-bottom:48px">
+      <div class="card ai d2" style="text-align:center"><div class="sn" style="color:var(--green)">95%</div><div class="sl" style="margin-top:8px">效率提升</div><div class="body" style="margin-top:8px">40+ 小时 → 5 分钟</div></div>
+      <div class="card ai d3" style="text-align:center"><div class="sn" style="color:var(--blue)">80%</div><div class="sl" style="margin-top:8px">Gas 节省</div><div class="body" style="margin-top:8px">批量结算降低费用</div></div>
+      <div class="card ai d4" style="text-align:center"><div class="sn" style="color:var(--purple)">100%</div><div class="sl" style="margin-top:8px">透明度</div><div class="body" style="margin-top:8px">所有记录链上可查</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px">
+      <div class="card ai d3" style="text-align:center"><div style="font-size:32px;margin-bottom:8px">📦</div><div style="font-size:24px;font-weight:700">36+</div><div class="sl">代码文件</div></div>
+      <div class="card ai d4" style="text-align:center"><div style="font-size:32px;margin-bottom:8px">🔌</div><div style="font-size:24px;font-weight:700">15+</div><div class="sl">API 接口</div></div>
+      <div class="card ai d5" style="text-align:center"><div style="font-size:32px;margin-bottom:8px">📱</div><div style="font-size:24px;font-weight:700">6</div><div class="sl">页面组件</div></div>
+      <div class="card ai d5" style="text-align:center"><div style="font-size:32px;margin-bottom:8px">🔗</div><div style="font-size:24px;font-weight:700">2</div><div class="sl">区块链集成</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide grid-bg" data-slide="8">
+  <div class="slide-content" style="align-items:center;justify-content:center;text-align:center">
+    <div class="label ai" style="margin-bottom:24px">AI x WEB3 HACKATHON . COBO TRACK</div>
+    <div class="title ai d1" style="font-size:80px;margin-bottom:24px"><span class="tc">Thank</span> <span class="tp">You</span></div>
+    <div class="sub ai d2" style="max-width:800px;margin-bottom:48px">DAO Contrib Agent - AI 驱动的 DAO 贡献自动追踪与链上结算系统</div>
+    <div style="display:flex;gap:16px" class="ai d3">
+      <div style="background:var(--blue);color:#0A0A0F;padding:16px 32px;border-radius:12px;font-size:18px;font-weight:700">GitHub</div>
+      <div style="background:var(--pink);color:#0A0A0F;padding:16px 32px;border-radius:12px;font-size:18px;font-weight:700">Demo</div>
+    </div>
+    <div style="margin-top:80px;display:flex;gap:24px" class="ai d4">
+      <div style="border:2px solid var(--blue);color:var(--blue);padding:8px 16px;border-radius:8px;font-size:12px">Cobo Agentic Wallet</div>
+      <div style="border:2px solid var(--cyan);color:var(--cyan);padding:8px 16px;border-radius:8px;font-size:12px">Sepolia Testnet</div>
+      <div style="border:2px solid var(--pink);color:var(--pink);padding:8px 16px;border-radius:8px;font-size:12px">2026</div>
+    </div>
+  </div>
+</div>
+
+</div>
+<div class="nav" id="nav"></div>
+<div class="sc" id="sc">01 / 09</div>
+</div></div>
+<script>
+function S(){const s=document.getElementById('stage');s.style.transform=`scale(${Math.min(innerWidth/1920,innerHeight/1080)})`}addEventListener('resize',S);S();
+let c=0;const sl=document.querySelectorAll('.slide'),n=sl.length,r=document.getElementById('nav');
+for(let i=0;i<n;i++){const d=document.createElement('div');d.className='nd'+(i?'':' a');d.onclick=()=>g(i);r.appendChild(d)}
+function u(){r.querySelectorAll('.nd').forEach((d,i)=>d.classList.toggle('a',i===c));document.getElementById('sc').textContent=`${String(c+1).padStart(2,'0')} / ${String(n).padStart(2,'0')}`}
+function g(i){if(i<0||i>=n)return;sl[c].classList.remove('active');c=i;sl[c].classList.add('active');u()}
+addEventListener('keydown',e=>{if('ArrowDown ArrowRight '.includes(e.key)){e.preventDefault();g(c+1)}if('ArrowUp ArrowLeft'.includes(e.key)){e.preventDefault();g(c-1)}});
+let ty=0;addEventListener('touchstart',e=>{ty=e.touches[0].clientY});addEventListener('touchend',e=>{const d=ty-e.changedTouches[0].clientY;if(Math.abs(d)>50){d>0?g(c+1):g(c-1)}});
+let w=0;addEventListener('wheel',e=>{if(w)return;w=1;setTimeout(()=>w=0,800);e.deltaY>0?g(c+1):g(c-1)});
+</script>
+</body>
+</html>

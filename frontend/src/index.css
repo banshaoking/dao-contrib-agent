@@ -1,0 +1,505 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   DAO Contrib Agent - Design System
+   Linear × Vercel × Arbitrum
+   专业 · 可信 · AI · 自动化 · 金融级 · 极简
+   ======================================== */
+
+:root {
+  /* 核心色彩 */
+  --bg-primary: #09090b;
+  --bg-secondary: #111113;
+  --bg-tertiary: #18181b;
+  --bg-elevated: #1c1c1f;
+  --bg-hover: #222225;
+
+  /* 主色 */
+  --color-primary: #7C3AED;
+  --color-primary-hover: #6D28D9;
+  --color-primary-muted: rgba(124, 58, 237, 0.15);
+
+  /* 辅色 */
+  --color-secondary: #3B82F6;
+  --color-secondary-hover: #2563EB;
+  --color-secondary-muted: rgba(59, 130, 246, 0.15);
+
+  /* 成功色 */
+  --color-success: #22C55E;
+  --color-success-hover: #16A34A;
+  --color-success-muted: rgba(34, 197, 94, 0.15);
+
+  /* 警告色 */
+  --color-warning: #F59E0B;
+  --color-warning-muted: rgba(245, 158, 11, 0.15);
+
+  /* 错误色 */
+  --color-error: #EF4444;
+  --color-error-muted: rgba(239, 68, 68, 0.15);
+
+  /* 文字 */
+  --text-primary: #FAFAFA;
+  --text-secondary: #A1A1AA;
+  --text-tertiary: #71717A;
+  --text-muted: #52525B;
+
+  /* 边框 */
+  --border-primary: #27272A;
+  --border-secondary: #1E1E21;
+  --border-hover: #3F3F46;
+
+  /* 字体 */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   Base
+   ======================================== */
+
+* {
+  color: inherit;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+/* ========================================
+   Components
+   ======================================== */
+
+@layer components {
+  /* ---- Card ---- */
+  .card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: 12px;
+    padding: 24px;
+    transition: border-color 0.15s ease;
+  }
+
+  .card:hover {
+    border-color: var(--border-hover);
+  }
+
+  .card-compact {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    padding: 16px;
+  }
+
+  /* ---- Button ---- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    transition: all 0.15s ease;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    white-space: nowrap;
+  }
+
+  .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .btn-primary {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    background: var(--color-primary-hover);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
+  }
+
+  .btn-secondary:hover:not(:disabled) {
+    background: var(--bg-hover);
+    border-color: var(--border-hover);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-secondary);
+  }
+
+  .btn-ghost:hover:not(:disabled) {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+  }
+
+  .btn-success {
+    background: var(--color-success);
+    color: white;
+  }
+
+  .btn-success:hover:not(:disabled) {
+    background: var(--color-success-hover);
+  }
+
+  .btn-sm {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .btn-lg {
+    padding: 12px 28px;
+    font-size: 15px;
+  }
+
+  /* ---- Input ---- */
+  .input {
+    width: 100%;
+    padding: 10px 14px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--text-primary);
+    transition: all 0.15s ease;
+    outline: none;
+  }
+
+  .input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-muted);
+  }
+
+  .input::placeholder {
+    color: var(--text-muted);
+  }
+
+  select.input {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2371717A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 40px;
+    cursor: pointer;
+  }
+
+  select.input option {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+  }
+
+  /* ---- Badge ---- */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  .badge-purple {
+    background: var(--color-primary-muted);
+    color: var(--color-primary);
+  }
+
+  .badge-blue {
+    background: var(--color-secondary-muted);
+    color: var(--color-secondary);
+  }
+
+  .badge-green {
+    background: var(--color-success-muted);
+    color: var(--color-success);
+  }
+
+  .badge-warning {
+    background: var(--color-warning-muted);
+    color: var(--color-warning);
+  }
+
+  .badge-error {
+    background: var(--color-error-muted);
+    color: var(--color-error);
+  }
+
+  .badge-neutral {
+    background: rgba(161, 161, 170, 0.15);
+    color: var(--text-secondary);
+  }
+
+  /* ---- Table ---- */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .table th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border-primary);
+  }
+
+  .table td {
+    padding: 12px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border-secondary);
+  }
+
+  .table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .table tr:hover td {
+    background: var(--bg-hover);
+  }
+
+  /* ---- Progress ---- */
+  .progress {
+    height: 4px;
+    background: var(--bg-tertiary);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.5s ease;
+  }
+
+  .progress-bar-primary {
+    background: var(--color-primary);
+  }
+
+  .progress-bar-success {
+    background: var(--color-success);
+  }
+
+  .progress-bar-secondary {
+    background: var(--color-secondary);
+  }
+
+  /* ---- Avatar ---- */
+  .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--bg-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    flex-shrink: 0;
+  }
+
+  .avatar-sm {
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+  }
+
+  .avatar-lg {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  /* ---- Stat ---- */
+  .stat-value {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--text-primary);
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-tertiary);
+    margin-top: 6px;
+  }
+
+  .stat-change {
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 4px;
+  }
+
+  .stat-change-up {
+    color: var(--color-success);
+  }
+
+  .stat-change-down {
+    color: var(--color-error);
+  }
+
+  /* ---- Divider ---- */
+  .divider {
+    height: 1px;
+    background: var(--border-primary);
+    margin: 16px 0;
+  }
+
+  /* ---- Spinner ---- */
+  .spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-primary);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+  }
+
+  /* ---- Score Ring ---- */
+  .score-ring {
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+
+  .score-ring svg {
+    transform: rotate(-90deg);
+  }
+
+  .score-ring-value {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.3s ease-out;
+}
+
+/* ========================================
+   Scrollbar
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-primary);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-hover);
+}
+
+/* ========================================
+   Utilities
+   ======================================== */
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
+}
+
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+/* 淡入序列 - 用于列表项 */
+.fade-in-item {
+  animation: fadeInUp 0.4s ease-out both;
+}
+
+.fade-in-item:nth-child(1) { animation-delay: 0ms; }
+.fade-in-item:nth-child(2) { animation-delay: 50ms; }
+.fade-in-item:nth-child(3) { animation-delay: 100ms; }
+.fade-in-item:nth-child(4) { animation-delay: 150ms; }
+.fade-in-item:nth-child(5) { animation-delay: 200ms; }
+.fade-in-item:nth-child(6) { animation-delay: 250ms; }
+.fade-in-item:nth-child(7) { animation-delay: 300ms; }
+.fade-in-item:nth-child(8) { animation-delay: 350ms; }

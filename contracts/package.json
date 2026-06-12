@@ -1,0 +1,20 @@
+{
+  "name": "dao-contrib-contracts",
+  "version": "1.0.0",
+  "description": "DAO Contrib Agent 智能合约",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "demo": "hardhat run scripts/demo.ts",
+    "deploy:local": "hardhat run scripts/deploy.ts --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy.ts --network sepolia",
+    "verify": "hardhat verify --network sepolia"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@openzeppelin/contracts": "^4.9.3",
+    "dotenv": "^16.3.1",
+    "hardhat": "^2.17.0",
+    "typescript": "^5.1.6"
+  }
+}
