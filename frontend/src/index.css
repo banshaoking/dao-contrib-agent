@@ -261,6 +261,15 @@ a:hover {
     color: var(--text-secondary);
   }
 
+  /* ---- Grid Background ---- */
+  .grid-bg {
+    background-color: #09090b;
+    background-image:
+      linear-gradient(rgba(124, 58, 237, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(124, 58, 237, 0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
   /* ---- Table ---- */
   .table {
     width: 100%;
