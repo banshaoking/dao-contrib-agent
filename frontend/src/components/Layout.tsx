@@ -114,7 +114,7 @@ export default function Layout() {
       </aside>
 
       {/* Main */}
-      <main className="flex-1 overflow-auto">
+      <main className="flex-1 overflow-auto grid-bg">
         <div className="max-w-6xl mx-auto px-8 py-8">
           <Outlet />
         </div>
